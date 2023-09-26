@@ -47,6 +47,7 @@
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="pendudukmiskin.html">Jumlah Penduduk Miskin</a></li>
+                            </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -65,7 +66,7 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <h4>Jumlah Penduduk</h4>
+                <h4>Rata-Rata Curah Hujan</h4>
             </div>
             <div class="card-body">
                 <div id="chart"></div>
@@ -105,69 +106,42 @@
         integrity="sha512-HctQcT5hnI/elQck4950pvd50RuDnjCSGSoHI8CNyQIYVxsUoyJ+gSQIOrll4oM/Z7Kfi7WCLMIbJbiwYHFCpA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>var options = {
-            series: [{
-                name: 'Jumlah Penduduk',
-                data: [39081, 73034, 46333, 41115, 56377, 41277, 64153, 44726, 37315, 53843, 32858, 39699, 56300, 136145, 54844]
-            }],
-            chart: {
-                type: 'bar',
-                height: 350
-            },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '55%',
-                    endingShape: 'rounded',
-                    dataLabels: {
-                        position: 'top'
-                    }
-                },
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-            },
-            xaxis: {
-                categories: ['Wonotunggal	', 'Bandar	', 'Blado	', 'Reban	', 'Bawang	', 'Tersono	', 'Gringsing	', 'Limpung	', 'Banyuputih	', 'Subah	', 'Pecalungan	', 'Tulis	', 'Kandeman	', 'Batang	', 'Warungasem'
-                ],
+        series: [{
+        name: 'Rata-Rata Curah Hujan Bulanan',
+        data: [245.66, 197.10, 177.35, 304.58, 299.66, 283.60]
+      }],
+        chart: {
+        height: 350,
+        type: 'area'
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        curve: 'smooth'
+      },
+      xaxis: {
+        categories: ['2017','2018', '2019', '2020', '2021', '2022'],
+        title: {
+                    text: 'Tahun'
+                }
+      },
+      yaxis: {
                 title: {
-                    text: 'Kecamatan'
+                    text: 'mm'
                 }
             },
-            yaxis: {
-                title: {
-                    text: 'Jiwa'
-                }
-            },
-            fill: {
-                opacity: 1
-            },
-            tooltip: {
-                y: {
+      tooltip: {
+        y: {
                     formatter: function (val) {
-                        return val + " Jiwa"
+                        return val + " mm"
                     }
                 }
-            },
-            dataLabels: {
-                enabled: true,
-                formatter: function (val) {
-                    return val;
-                },
-                offsetY: -20,
-                style: {
-                    fontSize: '12px',
-                    colors: ["#304758"]
-                }
-            },
-        };
+      },
+      };
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();</script>
+      var chart = new ApexCharts(document.querySelector("#chart"), options);
+      chart.render();</script>
 </body>
 
 </html>
